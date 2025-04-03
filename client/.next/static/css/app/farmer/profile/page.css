@@ -1,0 +1,235 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./app/styles/profile.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --primary: #232F3E;         /* Amazon dark blue */
+  --secondary: #febd69;       /* Amazon yellow */
+  --accent: #37946c;         /* Green accent */
+  --text: #0F1111;           /* Dark text */
+  --text-light: #565959;     /* Light text */
+  --border: #DDD;            /* Border color */
+  --error: #c40000;          /* Error red */
+  --success: #067d62;        /* Success green */
+  --background: #f8f9fa;     /* Light background */
+}
+
+.profile-container {
+  max-width: 1000px;
+  margin: 6rem auto 2rem;
+  padding: 2rem;
+}
+
+/* Profile Header */
+.profile-header {
+  background: linear-gradient(135deg, var(--primary), #37475A);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+/* Profile Form Section */
+.profile-form {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Form Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(254, 189, 105, 0.1);
+  outline: none;
+}
+
+/* Profile Photo Section */
+.profile-photo-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--background);
+  border-radius: 12px;
+}
+
+.photo-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-upload-btn {
+  background: var(--secondary);
+  color: var(--text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.photo-upload-btn:hover {
+  background: #f4a941;
+  transform: translateY(-2px);
+}
+
+/* Action Buttons */
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.save-btn, .cancel-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn {
+  background: var(--secondary);
+  color: var(--text);
+  border: none;
+  flex: 2 1;
+}
+
+.save-btn:hover {
+  background: #f4a941;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(254, 189, 105, 0.2);
+}
+
+.cancel-btn {
+  background: white;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  flex: 1 1;
+}
+
+.cancel-btn:hover {
+  background: var(--background);
+  border-color: var(--text-light);
+}
+
+/* Status Messages */
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.success-message {
+  background: #f0fff4;
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.error-message {
+  background: #fff5f5;
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+    margin-top: 5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .save-btn, .cancel-btn {
+    width: 100%;
+  }
+
+  .profile-header {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+}
+

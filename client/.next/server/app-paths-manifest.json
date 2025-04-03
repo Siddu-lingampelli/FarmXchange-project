@@ -1,0 +1,13 @@
+{
+  "/not-found": "app/not-found.js",
+  "/customer/dashboard/page": "app/customer/dashboard/page.js",
+  "/login/page": "app/login/page.js",
+  "/customer/profile/page": "app/customer/profile/page.js",
+  "/customer/cart/page": "app/customer/cart/page.js",
+  "/customer/orders/page": "app/customer/orders/page.js",
+  "/farmer/dashboard/page": "app/farmer/dashboard/page.js",
+  "/farmer/earnings/page": "app/farmer/earnings/page.js",
+  "/farmer/orders/page": "app/farmer/orders/page.js",
+  "/farmer/profile/page": "app/farmer/profile/page.js",
+  "/farmer/products/manage/page": "app/farmer/products/manage/page.js"
+}

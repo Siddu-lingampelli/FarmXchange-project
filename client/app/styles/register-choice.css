@@ -1,0 +1,167 @@
+.register-choice-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.register-choice-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.register-choice-header h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.register-choice-header p {
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+.register-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.register-choice-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-choice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.register-choice-card.farmer:hover {
+  border-color: #48bb78;
+}
+
+.register-choice-card.customer:hover {
+  border-color: #4299e1;
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.farmer .card-icon {
+  color: #48bb78;
+  background: #f0fff4;
+}
+
+.customer .card-icon {
+  color: #4299e1;
+  background: #ebf8ff;
+}
+
+.register-choice-card h2 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.register-choice-card p {
+  color: #718096;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.benefits-list li {
+  padding: 0.75rem 0;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.farmer .benefits-list li::before {
+  color: #48bb78;
+}
+
+.customer .benefits-list li::before {
+  color: #4299e1;
+}
+
+.choice-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.farmer .choice-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.farmer .choice-btn:hover {
+  background: #38a169;
+  transform: translateY(-2px);
+}
+
+.customer .choice-btn {
+  background: #4299e1;
+  color: white;
+}
+
+.customer .choice-btn:hover {
+  background: #3182ce;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .register-choice-container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .register-choice-header {
+    margin-bottom: 2rem;
+  }
+
+  .register-choice-header h1 {
+    font-size: 2rem;
+  }
+
+  .register-choice-card {
+    padding: 2rem 1.5rem;
+  }
+}
