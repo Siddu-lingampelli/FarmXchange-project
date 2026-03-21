@@ -91,7 +91,7 @@ exports.removeFromCart = async (req, res) => {
 exports.updateCartItem = async (req, res) => {
   try {
     const { productId } = req.params;
-    const { change } = req.body; // change will be +1 or -1
+    const { quantityDelta } = req.body; // quantityDelta will be +1 or -1
 
     const cart = await Cart.findOne({ customerId: req.user.userId });
     if (!cart) {
@@ -112,8 +112,8 @@ exports.updateCartItem = async (req, res) => {
       });
     }
 
-    const item = cart.items[itemIndex];
-    const newQuantity = item.quantity + change;
+    const cartItem = cart.items[itemIndex];
+    const newQuantity = cartItem.quantity + quantityDelta;
 
     // Check if the new quantity is valid
     if (newQuantity <= 0) {

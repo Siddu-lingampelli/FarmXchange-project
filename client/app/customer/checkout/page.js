@@ -96,7 +96,7 @@ export default function Checkout() {
     }
   };
 
-  const handleUPIPayment = (method) => {
+  const handlePaymentMethodSelection = (method) => {
     setOrderDetails(prev => ({
       ...prev,
       paymentMethod: method
@@ -222,7 +222,7 @@ export default function Checkout() {
                   name="paymentMethod"
                   value="cash"
                   checked={orderDetails.paymentMethod === 'cash'}
-                  onChange={(e) => handleUPIPayment('cash')}
+                  onChange={(e) => handlePaymentMethodSelection('cash')}
                 />
                 <div className="payment-content">
                   <span className="payment-icon">💵</span>
@@ -238,7 +238,7 @@ export default function Checkout() {
                 <div className="upi-options">
                   <button 
                     className={`upi-option ${orderDetails.paymentMethod === 'gpay' ? 'selected' : ''}`}
-                    onClick={() => handleUPIPayment('gpay')}
+                    onClick={() => handlePaymentMethodSelection('gpay')}
                   >
                     <img 
                       src="https://static.vecteezy.com/system/resources/previews/017/221/853/original/google-pay-logo-transparent-free-png.png" 
@@ -250,7 +250,7 @@ export default function Checkout() {
 
                   <button 
                     className={`upi-option ${orderDetails.paymentMethod === 'phonepe' ? 'selected' : ''}`}
-                    onClick={() => handleUPIPayment('phonepe')}
+                    onClick={() => handlePaymentMethodSelection('phonepe')}
                   >
                     <img 
                       src="https://th.bing.com/th/id/OIP.NnVN55UD-vWuXyxXsFWAeAHaHa?w=153&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" 
@@ -262,7 +262,7 @@ export default function Checkout() {
 
                   <button 
                     className={`upi-option ${orderDetails.paymentMethod === 'paytm' ? 'selected' : ''}`}
-                    onClick={() => handleUPIPayment('paytm')}
+                    onClick={() => handlePaymentMethodSelection('paytm')}
                   >
                     <img 
                       src="https://static.vecteezy.com/system/resources/previews/022/100/711/large_2x/paytm-logo-transparent-free-png.png" 

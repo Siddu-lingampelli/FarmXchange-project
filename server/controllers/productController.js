@@ -10,12 +10,12 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, uploadDir);
+  destination: function(req, file, callback) {
+    callback(null, uploadDir);
   },
-  filename: function(req, file, cb) {
+  filename: function(req, file, callback) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, uniqueSuffix + path.extname(file.originalname));
+    callback(null, uniqueSuffix + path.extname(file.originalname));
   }
 });
 
@@ -24,23 +24,23 @@ const upload = multer({
   limits: {
     fileSize: 5 * 1024 * 1024 // 5MB limit
   },
-  fileFilter: (req, file, cb) => {
+  fileFilter: (req, file, callback) => {
     const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     if (allowedTypes.includes(file.mimetype)) {
-      cb(null, true);
+      callback(null, true);
     } else {
-      cb(new Error('Invalid file type. Only JPEG, PNG and JPG are allowed.'));
+      callback(new Error('Invalid file type. Only JPEG, PNG and JPG are allowed.'));
     }
   }
 }).single('image');
 
 exports.createProduct = async (req, res) => {
-  upload(req, res, async (err) => {
-    if (err) {
-      console.error('Upload error:', err);
+  upload(req, res, async (uploadError) => {
+    if (uploadError) {
+      console.error('Upload error:', uploadError);
       return res.status(400).json({
         success: false,
-        message: err.message
+        message: uploadError.message
       });
     }
 

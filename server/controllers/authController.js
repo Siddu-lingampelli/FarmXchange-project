@@ -53,8 +53,8 @@ exports.googleAuth = async (req, res) => {
       audience: process.env.GOOGLE_CLIENT_ID
     });
 
-    const payload = ticket.getPayload();
-    const { email, name } = payload;
+    const googleTokenPayload = ticket.getPayload();
+    const { email } = googleTokenPayload;
 
     let user = await User.findOne({ email });
     if (!user) {
