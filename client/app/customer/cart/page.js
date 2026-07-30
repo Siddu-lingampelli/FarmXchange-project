@@ -63,7 +63,7 @@ export default function Cart() {
     }
   };
 
-  const updateQuantity = async (productId, change) => {
+  const updateQuantity = async (productId, quantityDelta) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('userToken');
@@ -73,7 +73,7 @@ export default function Cart() {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ change })
+        body: JSON.stringify({ quantityDelta })
       });
 
       const data = await response.json();

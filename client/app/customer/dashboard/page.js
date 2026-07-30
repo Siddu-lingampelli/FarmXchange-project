@@ -59,8 +59,8 @@ export default function CustomerDashboard() {
     fetchProfile();
 
     // Poll for updates
-    const interval = setInterval(fetchProducts, 3000);
-    return () => clearInterval(interval);
+    const productPollingInterval = setInterval(fetchProducts, 3000);
+    return () => clearInterval(productPollingInterval);
   }, []);
 
   const fetchProducts = async () => {
